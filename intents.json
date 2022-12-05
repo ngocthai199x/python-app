@@ -1,0 +1,44 @@
+{"intents": [
+    {"tag": "shutdown",
+     "patterns": ["shutdown", "Set the time-out period before shutdown", "auto shutdown","turn off computer"],
+     "responses": ["shutdown /s /t 10"],
+     "context_set": ""
+    },
+    {"tag": "shutdownandrestart",
+     "patterns": ["shutdown and restart", "Set the time-out period before shutdown and restart computer"],
+     "responses": ["shutdown /r /t 10"]
+    },
+    {"tag": "path",
+     "patterns": ["path displays the current command path.", "current path"],
+     "responses": ["path"]
+    },
+    {"tag": "environmentvariables",
+     "patterns": ["Displays environment variables.", "environment variables" ],
+     "responses": ["echo %Path%", "set"]
+    },
+    {"tag": "aetcommandpath",
+     "patterns": ["Sets the command path in the PATH environment variable"],
+     "responses": ["path %PATH%;C:\test\bin"]
+    },
+    {
+        "tag":"systeminfo",
+        "patterns":["Displays detailed configuration information about a computer and its operating system"],
+        "responses":["systeminfo","systeminfo /s test-server","systeminfo /s test-server /u testdomain.local"]
+    },
+    {
+        "tag":"tasklist",
+        "patterns":["Displays a list of currently running processes"],
+        "responses":["tasklist","tasklist /s SERVER","tasklist /s SERVER /u TESTDOMAIN\\USER01 /p P@ssw0rd"]
+    },
+    {
+        "tag":"charactercode",
+        "patterns":["Change the character code to Japanese","JP character code"],
+        "responses":["chcp 437"]
+    },
+    {
+        "tag":"charactercode2",
+        "patterns":["Change the character code to English","English character code"],
+        "responses":["chcp 932"]
+    }
+]
+}
